@@ -1,11 +1,7 @@
 services:
-   - type: web
-     name: myapi                   
-     env: aspnetcore                
-     name: myapi
-     env: docker
-     plan: free                    
-     autoDeploy: true              
-     branch: master                  
-     buildCommand: "dotnet build src/Render.Api/Render.Api/Render.Api.csproj"  
-     startCommand: "dotnet src/Render.Api/bin/Debug/net9.0/Render.Api.dll" 
+    - type: web
+      name: sample-render                  
+      env: docker               
+      plan: free                    
+      autoDeploy: true              
+      branch: master 
