@@ -6,7 +6,7 @@ services:
       rootDir: ./src/Render.Api
       autoDeploy: true              
       branch: master 
-      dockerContext: .
+      dockerContext: ./src/Render.Api
       dockerfilePath: Dockerfile
     
     - type: web
@@ -16,5 +16,5 @@ services:
       rootDir: ./src/Render-V2.Api
       autoDeploy: true              
       branch: master 
-      dockerContext: .
+      dockerContext: ./src/Render-V2.Api
       dockerfilePath: Dockerfile
