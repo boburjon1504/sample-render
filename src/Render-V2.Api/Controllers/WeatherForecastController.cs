@@ -18,6 +18,9 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
+    [HttpGet("say-hi")]
+    public IActionResult SayHi() => Ok("Say - hi endpoint hit!");
+
     [HttpGet]
     public IEnumerable<WeatherForecast> Get()
     {
