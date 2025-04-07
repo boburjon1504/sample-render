@@ -1,0 +1,18 @@
+services:
+    - type: web
+      name: sample-render  
+      runtime: docker         
+      plan: free         
+      autoDeploy: true              
+      branch: master 
+      dockerContext: .
+      dockerfilePath: ./src/Render.Api/Dockerfile
+    
+    - type: web
+      name: sample-render-v2  
+      runtime: docker         
+      plan: free         
+      autoDeploy: true              
+      branch: master 
+      dockerContext: .
+      dockerfilePath: ./src/Render-V2.Api/Dockerfile
