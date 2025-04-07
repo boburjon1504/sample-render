@@ -1,29 +1,27 @@
-# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-# This stage is used when running from VS in fast mode (Default for Debug configuration)
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
-
-# This stage is used to build the service project
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["/src/Render.Api/Render.Api.csproj", "/src/Render.Api/"]
-RUN dotnet restore "/src/Render.Api/Render.Api.csproj"
-COPY . .
-WORKDIR "/src/Render.Api"
-RUN dotnet build "/src/Render.Api/Render.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# This stage is used to publish the service project to be copied to the final stage
+# ❗️Fix the path here (no leading slash!)
+COPY src/Render.Api/Render.Api.csproj src/Render.Api/
+RUN dotnet restore src/Render.Api/Render.Api.csproj
+
+# Copy all source code
+COPY . .
+
+WORKDIR src/Render.Api
+RUN dotnet build Render.Api.csproj -c $BUILD_CONFIGURATION -o /app/build
+
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "/src/Render.Api/Render.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish Render.Api.csproj -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
