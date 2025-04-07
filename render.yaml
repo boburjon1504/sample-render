@@ -9,7 +9,7 @@ services:
       dockerfilePath: ./src/Render.Api/Dockerfile
 
     - type: web
-      name: sample-render                  
+      name: sample-render-v2                  
       env: docker               
       plan: free                    
       autoDeploy: true              
