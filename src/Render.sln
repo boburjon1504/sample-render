@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Render.Api", "Render.Api\Render.Api.csproj", "{166F40A0-2A37-4917-AAFC-73ED21E43CB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Render-V2.Api", "Render-V2.Api\Render-V2.Api.csproj", "{19BFFCF4-069D-4A0E-971D-9B7756663645}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{166F40A0-2A37-4917-AAFC-73ED21E43CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{166F40A0-2A37-4917-AAFC-73ED21E43CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{166F40A0-2A37-4917-AAFC-73ED21E43CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BFFCF4-069D-4A0E-971D-9B7756663645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BFFCF4-069D-4A0E-971D-9B7756663645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BFFCF4-069D-4A0E-971D-9B7756663645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BFFCF4-069D-4A0E-971D-9B7756663645}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
