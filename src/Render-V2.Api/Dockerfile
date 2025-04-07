@@ -15,8 +15,8 @@ RUN dotnet restore src/Render-V2.Api/Render-V2.Api.csproj
 # Copy all source code
 COPY . .
 
-WORKDIR /src/Render-V2.Api
-RUN dotnet build Render-V2.Api.csproj -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR src/Render-V2.Api
+RUN dotnet build src/Render-V2.Api.csproj -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
