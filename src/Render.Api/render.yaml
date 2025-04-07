@@ -6,4 +6,4 @@ services:
       autoDeploy: true              
       branch: master 
       dockerContext: ./src/Render.Api
-      dockerfilePath: ./src/Render.Api/Dockerfile
+      dockerfilePath: Dockerfile
