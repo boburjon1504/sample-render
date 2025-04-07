@@ -3,7 +3,6 @@ services:
       name: sample-render  
       runtime: docker         
       plan: free         
-      rootDir: ./src/Render.Api
       autoDeploy: true              
       branch: master 
       dockerContext: .
@@ -13,7 +12,6 @@ services:
       name: sample-render-v2  
       runtime: docker         
       plan: free         
-      rootDir: ./src/Render-V2.Api
       autoDeploy: true              
       branch: master 
       dockerContext: .
