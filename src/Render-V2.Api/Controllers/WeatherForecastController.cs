@@ -18,9 +18,9 @@ public class WeatherForecastController : ControllerBase
 
     private readonly IMongoCollection<User> collection;
     private readonly IConfiguration _configuration;
-    public WeatherForecastController(ILogger<WeatherForecastController> logger,IConfiguration configuration)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, IConfiguration configuration)
     {
-        var variable = "mongodb+srv://admin:<db_password>@cluster0.ix4en.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+        var variable = "mongodb+srv://admin:admin@cluster0.ix4en.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
         var client = new MongoClient(variable);
         var db = client.GetDatabase("RenderV2");
         collection = db.GetCollection<User>("users");
